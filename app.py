@@ -31,7 +31,7 @@ def main(ser):
         sleep(1)
         if exit_==1:
             break
-
+    exit_=1
 if __name__=="__main__":
     serv = ModbusServer("0.0.0.0", 502, no_block=True)
     ser = serial.Serial("COM2", 9600)
