@@ -1,4 +1,4 @@
-from pyModbusTCP.server import ModbusServer, DataBank, DataHandler
+from pyModbusTCP.server import ModbusServer, DataBank
 from time import sleep
 import serial
 
@@ -24,7 +24,8 @@ def main():
             print('Sending', ret_wr)
             ret_rd = ser.read(1024).decode('utf-8')
             print(ret_rd)
-            r = DataBank.set_holding_registers(self=serv.data_bank, address=0, word_list=[int(ret_rd)])
+            #r = DataBank.set_holding_registers(self=serv.data_bank, address=0, word_list=[int(ret_rd)])
+            r = DataBank.set_words(address=0, word_list=[int(ret_rd)])
             sleep(6)
     except Exception as e:
         print(e)
