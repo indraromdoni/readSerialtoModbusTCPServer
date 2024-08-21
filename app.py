@@ -1,4 +1,4 @@
-from pyModbusTCP.server import ModbusServer, DataBank, DataHandler
+from pyModbusTCP.server import ModbusServer, DataBank
 from time import sleep
 import serial
 
